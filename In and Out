@@ -1,0 +1,44 @@
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.lang.Math;
+import java.util.Random;
+import java.io.FileReader;
+
+public class testinput {
+    public static void main(String[] args) {
+        String txt = "Nguyen Viet Son";
+        Random rd = new Random();
+        int [] arr = new int[10];
+        for (int i = 0; i < 10; i++) {
+            arr[i] = rd.nextInt(100)+1;
+        }
+        // for (int i = 0; i < 10; i++) {
+        //     System.out.print(arr[i]+" ");
+        // }
+        try {
+            FileWriter fw = new FileWriter("C:\\Users\\Admin\\Desktop\\Bai 84\\data.txt");
+            PrintWriter ghi= new PrintWriter(fw);
+            for(int i= 0; i< 10;i++){
+                ghi.println(arr[i]);
+                
+            }
+            ghi.close();
+            fw.close();
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+    try {
+        FileReader f = new FileReader("C:\\Users\\Admin\\Desktop\\Bai 84\\data.txt");
+			BufferedReader dem= new BufferedReader(f);
+            while(true) {
+                String st= dem.readLine(); //doc 1 dong
+                if(st==null || st=="")break;
+                System.out.print(st+" ");
+            }
+    } catch (Exception e) {
+        //TODO: handle exception
+    }
+}
+}
